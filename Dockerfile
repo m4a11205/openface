@@ -17,6 +17,11 @@ RUN apt-get update && apt-get install -y \
     python-protobuf\
     wget \
     zip \
+    apache2 \
+  	iptables \
+  	nodejs \
+  	python-virtualenv \
+  	python-imaging \
     && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 ADD . /root/openface
