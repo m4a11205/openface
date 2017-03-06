@@ -79,12 +79,12 @@ If you don't want to start Chrome with a non-standard flag,
 the following commands use [ncat](https://nmap.org/ncat/) to
 route all OpenFace traffic through localhost to a remote server or
 Docker container so that the demo can be accessed in Chrome
-at `http://localhost:8000`.
+at `http://localhost:8500`.
 Replace `SERVER_IP` with the IP address of your server.
 
 ```
 export SERVER_IP=192.168.99.100
-ncat --sh-exec "ncat $SERVER_IP 8000" -l 8000 --keep-open &
+ncat --sh-exec "ncat $SERVER_IP 8500" -l 8500 --keep-open &
 ncat --sh-exec "ncat $SERVER_IP 9000" -l 9000 --keep-open &
 ```
 
@@ -94,15 +94,15 @@ so the demo works on a remote server or Docker without these workarounds.
 
 ### With Docker
 
-Start the HTTP and WebSocket servers on ports 8000 and 9000 in the
+Start the HTTP and WebSocket servers on ports 8500 and 9000 in the
 Docker container with:
 
 ```
-docker run -p 9000:9000 -p 8000:8000 -t -i bamos/openface /bin/bash -l -c '/root/openface/demos/web/start-servers.sh'
+docker run -p 9000:9000 -p 8500:8500 -t -i bamos/openface /bin/bash -l -c '/root/openface/demos/web/start-servers.sh'
 ```
 
 Then find the IP address of the container and access the demo
-in your browser at `http://docker-ip:8000`.
+in your browser at `http://docker-ip:8500`.
 
 ### Manual Setup
 After following the OpenFace setup guide and successfully running the
@@ -110,11 +110,11 @@ comparison demo, install the requirements for the web demo with
 `sudo pip install -r requirements.txt`
 from the `demos/web` directory.
 
-Start the HTTP and WebSocket servers on ports 8000 and 9000, respectively,
+Start the HTTP and WebSocket servers on ports 8500 and 9000, respectively,
 with `./demos/web/start-servers.sh`.
 If you wish to use other ports,
 pass them as `./demos/web/start-servers.sh HTTP_PORT WEBSOCKET_PORT`.
 
 You should now also be able to access the demo from your browser
-at `http://localhost:8000` if running locally or
-`http://your-server:8000` if running on a server.
+at `http://localhost:8500` if running locally or
+`http://your-server:8500` if running on a server.
