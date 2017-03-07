@@ -54,7 +54,7 @@ MAINTAINER Brandon Amos <brandon.amos.cs@gmail.com>
 #ADD chute/yalefaces /usr/local/bin/yalefaces
 #ADD chute/run.sh /usr/local/bin/run.sh
 
-EXPOSE 80 81 8010 8011 8012 8500 9000
+#EXPOSE 80 81 8010 8011 8012 8500 9000
 
-CMD /bin/bash -l -c '/root/openface/demos/web/start-servers.sh'
+#CMD /bin/bash -l -c '/root/openface/demos/web/start-servers.sh'
 CMD ["/bin/bash", "/usr/local/bin/run.sh"]
